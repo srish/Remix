@@ -1,0 +1,295 @@
+//Remastering a Distro (Customizing Ubuntu)
+//First Step
+//Installing UCK(Ubuntu Customization Kit)
+
+loma@loma-laptop:~$ sudo apt-get install uck
+[sudo] password for loma: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+uck is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 13 not upgraded.
+
+//Switch to directory where ubuntu iso file is placed
+loma@loma-laptop:~$ cd schoolOS
+//unpacking ubuntu9.10 iso before customization
+loma@loma-laptop:~/schoolOS$ sudo uck-remaster-unpack-iso ubuntu9.10.iso
+Removing ISO remastering dir...
+Mounting ISO image...
+Unpacking ISO image...
+Unmounting ISO image...
+
+//Ubuntu iso unpacks the result will be put in ~/tmp. {/home/user/tmp}
+
+//Unpacking the rootfs next generates files system of ubuntu.
+loma@loma-laptop:~/schoolOS$ sudo uck-remaster-unpack-rootfs
+[sudo] password for loma: 
+Mounting SquashFS image...
+Unpacking SquashFS image...
+Unmounting SquashFS image...
+loma@loma-laptop:~/schoolOS$ cd ~
+//Install subversion 
+loma@loma-laptop:~$ sudo apt-get install subversion
+[sudo] password for loma: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+subversion is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 13 not upgraded.
+
+//Exporting files via svn from schoolos directory through the http link 
+loma@loma-laptop:~$ svn export http://schoolos.googlecode.com/svn/trunk/ schoolos
+
+A    schoolos
+A    schoolos/Ubuntu
+A    schoolos/Ubuntu/Ebooks
+A    schoolos/Ubuntu/Ebooks/Theora_Cookbook.pdf
+A    schoolos/Ubuntu/Ebooks/Getting Started with Ubuntu 10.04.pdf
+A    schoolos/Ubuntu/Ebooks/IT-modules
+A    schoolos/Ubuntu/Ebooks/IT-modules/IT-Module-K-Tech.pdf
+A    schoolos/Ubuntu/Ebooks/IT-modules/IT-Module-Maths.pdf
+A    schoolos/Ubuntu/Ebooks/IT-modules/IT-Module-Chemistry.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Inkscape.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Firefox.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Audacity.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Shell Command.pdf
+A    schoolos/Ubuntu/Ebooks/Learn KompoZer.pdf
+A    schoolos/Ubuntu/Ebooks/FFmpeg2Theora.pdf
+A    schoolos/Ubuntu/Ebooks/k12 Educators Guide to OpenSource.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Blender.pdf
+A    schoolos/Ubuntu/Ebooks/Learn Open Office.pdf
+A    schoolos/Ubuntu/Ebooks/Learn LaTeX.pdf
+A    schoolos/Ubuntu/Ebooks/fossPrimer-Education.pdf
+A    schoolos/Ubuntu/Ebooks/Learn VLC.pdf
+A    schoolos/Ubuntu/Ebooks/RMS-essays.pdf
+A    schoolos/Ubuntu/Ebooks/Ubuntu Pocket Guide.pdf
+A    schoolos/Ubuntu/slides
+A    schoolos/Ubuntu/slides/directory.js
+A    schoolos/Ubuntu/slides/openoffice.html
+A    schoolos/Ubuntu/slides/translations.html
+A    schoolos/Ubuntu/slides/vlc.html
+A    schoolos/Ubuntu/slides/ubuntuone.html
+A    schoolos/Ubuntu/slides/gthumb.html
+A    schoolos/Ubuntu/slides/accessibility.html
+A    schoolos/Ubuntu/slides/audio-video-editor.html
+A    schoolos/Ubuntu/slides/link
+A    schoolos/Ubuntu/slides/link/menu-arrow.png
+A    schoolos/Ubuntu/slides/link/prototype.js
+A    schoolos/Ubuntu/slides/link/crossfade.css
+A    schoolos/Ubuntu/slides/link/builder.js
+A    schoolos/Ubuntu/slides/link/bullet-point.png
+A    schoolos/Ubuntu/slides/link/crossfade.js
+A    schoolos/Ubuntu/slides/link/general.css
+A    schoolos/Ubuntu/slides/link/overlay.png
+A    schoolos/Ubuntu/slides/link/effects.js
+A    schoolos/Ubuntu/slides/link/scriptaculous.js
+A    schoolos/Ubuntu/slides/link/menu-highlight.png
+A    schoolos/Ubuntu/slides/link/fastinit.js
+A    schoolos/Ubuntu/slides/link/background.jpg
+A    schoolos/Ubuntu/slides/welcome.html
+A    schoolos/Ubuntu/slides/installing-software.html
+A    schoolos/Ubuntu/slides/firefox.html
+A    schoolos/Ubuntu/slides/image-editor.html
+A    schoolos/Ubuntu/slides/index.html
+A    schoolos/Ubuntu/slides/icons
+A    schoolos/Ubuntu/slides/icons/GIMP_Icon.png
+A    schoolos/Ubuntu/slides/icons/firefox-3.5.png
+A    schoolos/Ubuntu/slides/icons/web.png
+A    schoolos/Ubuntu/slides/icons/openoffice.png
+A    schoolos/Ubuntu/slides/icons/ubuntuone.png
+A    schoolos/Ubuntu/slides/icons/vlc.png
+A    schoolos/Ubuntu/slides/icons/rhythmbox.png
+A    schoolos/Ubuntu/slides/icons/google-chrome-logo.png
+A    schoolos/Ubuntu/slides/icons/gthumb.png
+A    schoolos/Ubuntu/slides/icons/editor.png
+A    schoolos/Ubuntu/slides/icons/accessibility.png
+A    schoolos/Ubuntu/slides/icons/SchoolOS-logo.png
+A    schoolos/Ubuntu/slides/icons/help.png
+A    schoolos/Ubuntu/slides/icons/thunderbird_logo.png
+A    schoolos/Ubuntu/slides/icons/pidgin_logo.png
+A    schoolos/Ubuntu/slides/icons/softwarecenter.png
+A    schoolos/Ubuntu/slides/documentation.html
+A    schoolos/Ubuntu/slides/thunderbird.html
+A    schoolos/Ubuntu/slides/rhythmbox-totem.html
+A    schoolos/Ubuntu/slides/pidgin.html
+A    schoolos/Ubuntu/How to create Live USB.pdf
+A    schoolos/Ubuntu/Installation Guide.pdf
+A    schoolos/Ubuntu/nautilus-scripts
+A    schoolos/Ubuntu/nautilus-scripts/Media
+A    schoolos/Ubuntu/nautilus-scripts/Media/ConvertAudioFile
+A    schoolos/Ubuntu/nautilus-scripts/Media/Naudilus
+A    schoolos/Ubuntu/nautilus-scripts/Media/Audio Video Convert
+A    schoolos/Ubuntu/nautilus-scripts/Media/Extract Audio
+A    schoolos/Ubuntu/nautilus-scripts/Media/Add to Playlist
+A    schoolos/Ubuntu/nautilus-scripts/Media/Video Converter
+A    schoolos/Ubuntu/nautilus-scripts/Utils
+A    schoolos/Ubuntu/nautilus-scripts/Utils/SendToMenu
+A    schoolos/Ubuntu/nautilus-scripts/Utils/Open Terminal Here
+A    schoolos/Ubuntu/nautilus-scripts/Utils/Font Installer
+A    schoolos/Ubuntu/nautilus-scripts/Utils/OpenInGEdit
+A    schoolos/Ubuntu/nautilus-scripts/Utils/SetAsWallpaper
+A    schoolos/Ubuntu/nautilus-scripts/Utils/TermInCurdir
+A    schoolos/Ubuntu/nautilus-scripts/Utils/SendShortcutTo
+A    schoolos/Ubuntu/nautilus-scripts/Utils/Record as Gif
+A    schoolos/Ubuntu/nautilus-scripts/Utils/Search Here
+A    schoolos/Ubuntu/nautilus-scripts/Utils/InstallTheme
+A    schoolos/Ubuntu/nautilus-scripts/Utils/SetAsSplash
+A    schoolos/Ubuntu/nautilus-scripts/Files
+A    schoolos/Ubuntu/nautilus-scripts/Files/Shredder
+A    schoolos/Ubuntu/nautilus-scripts/Files/File Type
+A    schoolos/Ubuntu/nautilus-scripts/Files/Send Shortcut To...
+A    schoolos/Ubuntu/nautilus-scripts/Files/Create Patch
+A    schoolos/Ubuntu/nautilus-scripts/Files/md5
+A    schoolos/Ubuntu/nautilus-scripts/Files/md5/Check_md5_old
+A    schoolos/Ubuntu/nautilus-scripts/Files/md5/Check md5
+A    schoolos/Ubuntu/nautilus-scripts/Files/md5/Create md5
+A    schoolos/Ubuntu/nautilus-scripts/Files/Convert to Executable
+A    schoolos/Ubuntu/nautilus-scripts/Files/Remove temp Files
+A    schoolos/Ubuntu/nautilus-scripts/Files/MoveTo
+A    schoolos/Ubuntu/nautilus-scripts/Files/pdf
+A    schoolos/Ubuntu/nautilus-scripts/Files/pdf/PDF info
+A    schoolos/Ubuntu/nautilus-scripts/Files/pdf/PDF Shuffle
+A    schoolos/Ubuntu/nautilus-scripts/Files/pdf/PDF Join
+A    schoolos/Ubuntu/nautilus-scripts/Files/pdf/Print
+A    schoolos/Ubuntu/nautilus-scripts/Files/Split File
+A    schoolos/Ubuntu/nautilus-scripts/Files/Encrypt-Decrypt
+A    schoolos/Ubuntu/nautilus-scripts/Files/CopyTo
+A    schoolos/Ubuntu/nautilus-scripts/Root
+A    schoolos/Ubuntu/nautilus-scripts/Root/Rootilus
+A    schoolos/Ubuntu/nautilus-scripts/Root/RootOpenInGEdit
+A    schoolos/Ubuntu/nautilus-scripts/Root/RootTermInCurdir
+A    schoolos/Ubuntu/nautilus-scripts/ISO Manager
+A    schoolos/Ubuntu/nautilus-scripts/ISO Manager/ISO unMount
+A    schoolos/Ubuntu/nautilus-scripts/ISO Manager/Make ISO
+A    schoolos/Ubuntu/nautilus-scripts/ISO Manager/Make ISO/ISO X
+A    schoolos/Ubuntu/nautilus-scripts/ISO Manager/ISO Mount
+A    schoolos/Ubuntu/nautilus-scripts/Admin
+A    schoolos/Ubuntu/nautilus-scripts/Admin/WhichPKG (RPM)
+A    schoolos/Ubuntu/nautilus-scripts/Admin/Apt
+A    schoolos/Ubuntu/nautilus-scripts/Admin/WhichPKG (Portage)
+A    schoolos/Ubuntu/nautilus-scripts/Admin/Apt Cache
+A    schoolos/Ubuntu/nautilus-scripts/Admin/Update Package List
+A    schoolos/Ubuntu/nautilus-scripts/Admin/WhichPKG (DPKG)
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/flop
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/grigio
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/rotate +90
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/rotate -90
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/gamma 1.4
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/+contrast
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Scale Image
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Scale Image/Scale Image
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Scale Image/Scale Image To Sizes
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/-contrast
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter/jpg
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter/tif
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter/png
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter/pdf
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/Image Converter/bmp
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/flip
+A    schoolos/Ubuntu/nautilus-scripts/Image Editor/trim
+A    schoolos/Ubuntu/nautilus-scripts/Network
+A    schoolos/Ubuntu/nautilus-scripts/Network/Show IP Address
+A    schoolos/Ubuntu/nautilus-scripts/Network/Show External IP Address
+A    schoolos/Ubuntu/nautilus-scripts/Network/Start WebServer Here
+A    schoolos/Ubuntu/nautilus-scripts/Network/Add Google DNS
+A    schoolos/Ubuntu/nautilus-scripts/Network/Download Here
+A    schoolos/Ubuntu/nautilus-scripts/toadd.txt
+A    schoolos/Ubuntu/Templates
+A    schoolos/Ubuntu/Templates/OpenOffice Writer.odt
+A    schoolos/Ubuntu/Templates/HTML Page.html
+A    schoolos/Ubuntu/Templates/Shell Script.sh
+A    schoolos/Ubuntu/Templates/C++ Hello World.cpp
+A    schoolos/Ubuntu/Templates/OpenOffice Spreadsheet.ods
+A    schoolos/Ubuntu/Templates/OpenOffice Presentation.odp
+A    schoolos/Ubuntu/lsb-release
+A    schoolos/Ubuntu/removeAll.sh
+A    schoolos/Ubuntu/bashrc
+A    schoolos/Ubuntu/How to create Live USB.odt
+A    schoolos/Ubuntu/unetbootin-windows-442.exe
+A    schoolos/Ubuntu/images
+A    schoolos/Ubuntu/images/schoolos-grub-image.tga
+A    schoolos/Ubuntu/images/hi-remington.mim
+A    schoolos/Ubuntu/images/bg_2560x1600.jpg
+A    schoolos/Ubuntu/images/bg_1680x1050.jpg
+A    schoolos/Ubuntu/images/logo_medium.png
+A    schoolos/Ubuntu/images/logo_xtra_large.png
+A    schoolos/Ubuntu/images/logo_large.png
+A    schoolos/Ubuntu/images/grub.cfg
+A    schoolos/Ubuntu/images/Ebooklogo.png
+A    schoolos/Ubuntu/images/05_debian_theme
+A    schoolos/Ubuntu/images/autorun.inf
+A    schoolos/Ubuntu/images/header.png
+A    schoolos/Ubuntu/images/bg_800x600.jpg
+A    schoolos/Ubuntu/images/headerlogo1.png
+A    schoolos/Ubuntu/images/bg_1280x1024.jpg
+A    schoolos/Ubuntu/images/text.cfg
+A    schoolos/Ubuntu/images/splash.pcx
+A    schoolos/Ubuntu/images/f1.txt
+A    schoolos/Ubuntu/images/f2.txt
+A    schoolos/Ubuntu/images/f3.txt
+A    schoolos/Ubuntu/images/f4.txt
+A    schoolos/Ubuntu/images/f5.txt
+A    schoolos/Ubuntu/images/bg_640x480.png
+A    schoolos/Ubuntu/images/f6.txt
+A    schoolos/Ubuntu/images/f7.txt
+A    schoolos/Ubuntu/images/f8.txt
+A    schoolos/Ubuntu/images/f9.txt
+A    schoolos/Ubuntu/images/headerlogo.png
+A    schoolos/Ubuntu/images/grub
+A    schoolos/Ubuntu/images/bg_1440x900.jpg
+A    schoolos/Ubuntu/images/schoolos-wallpaper.png
+A    schoolos/Ubuntu/images/start-here.png
+A    schoolos/Ubuntu/images/f10.txt
+A    schoolos/Ubuntu/images/ubiquity-gtkui.desktop
+A    schoolos/Ubuntu/images/bg_1024x768.jpg
+A    schoolos/Ubuntu/images/logo_small.png
+A    schoolos/Ubuntu/images/start-here.svg
+A    schoolos/Ubuntu/images/splash.png
+A    schoolos/Ubuntu/images/bg_1920x1200.jpg
+A    schoolos/Ubuntu/images/ubuntuheader.png
+A    schoolos/Ubuntu/Apply_Gconf_Setting.sh
+A    schoolos/Ubuntu/Setup.sh
+A    schoolos/Ubuntu/Apply Theme Changes.sh
+A    schoolos/Ubuntu/Modify_SourceList.sh
+A    schoolos/Ubuntu/Add_Remove_Packages.sh
+A    schoolos/Ubuntu/gedit-extra
+A    schoolos/Ubuntu/gedit-extra/run
+A    schoolos/Ubuntu/gedit-extra/compile
+A    schoolos/Ubuntu/CopyResources.sh
+A    schoolos/readme.txt
+Exported revision 8.
+loma@loma-laptop:~$ cd schoolos/Ubuntu/
+//giving executable permmissions ; ownership kind of
+loma@loma-laptop:~/schoolos/Ubuntu$ chmod +x ./*.sh 
+
+----------------------------------------------------
+//changing permissions in other tab of [tmp] folder
+root@loma-laptop:~# cd /home/loma/tmp
+root@loma-laptop:/home/loma/tmp# chmod -R 777 /home/loma/tmp
+
+//Executing the command to copy the contents of current folder to ~tmp/remaster-root/tmp
+loma@loma-laptop:~/schoolos/Ubuntu$ ./CopyResources.sh
+[sudo] password for loma: 
+`gedit-extra/compile' -> `/home/loma/tmp/remaster-root/tmp/gedit-extra/compile'
+`gedit-extra/run' -> `/home/loma/tmp/remaster-root/tmp/gedit-extra/run'
+
+//Need to be root to perform next step
+
+loma@loma-laptop:~/schoolos/Ubuntu$sudo uck-remaster-chroot-rootfs
+root@loma-laptop:~# cd /home
+root@loma-laptop:/home# cd loma
+root@loma-laptop:/home/loma# cd tmp
+root@loma-laptop:/home/loma/tmp# cd remaster-root
+root@loma-laptop:/home/loma/tmp/remaster-root# cd tmp
+
+//To edit the themes & gnome configuration settings 
+
+root@loma-laptop:/home/loma/tmp/remaster-root/tmp# ./Apply_Gconf_Setting.sh
+root@loma-laptop:/home/loma/tmp/remaster-root/tmp# ./"Apply Theme Changes.sh"
+
+
+//Pack new iso now ..Final Step
+sudo uck-remaster-pack-rootfs
+sudo uck-remaster-pack-iso SchoolOS.iso
